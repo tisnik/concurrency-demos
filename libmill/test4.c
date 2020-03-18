@@ -11,6 +11,7 @@ coroutine void print(char what) {
 }
 
 int main(void) {
+    setvbuf(stdout, (char*)NULL, _IONBF, 0);
     char ch;
     for (ch='a'; ch<='z'; ch++) {
         go(print(ch));

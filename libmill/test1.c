@@ -10,6 +10,7 @@ coroutine void bar() {
 }
 
 int main(void) {
+    setvbuf(stdout, (char*)NULL, _IONBF, 0);
     go(foo());
     go(bar());
     return 0;

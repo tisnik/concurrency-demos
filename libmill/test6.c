@@ -8,6 +8,7 @@ coroutine void sender(chan channel) {
 }
 
 int main() {
+    setvbuf(stdout, (char*)NULL, _IONBF, 0);
     chan channel = chmake(int, 0);
     puts("vytvoreni korutiny");
     go(sender(chdup(channel)));
